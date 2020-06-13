@@ -1,0 +1,256 @@
+<html>
+    <head>
+        <title>Sudoku Solver</title>
+        <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="stylesudoku.css">
+    </head>
+    <body>
+        <h1 id="heading">Sudoku Solver</h1>
+        <div id="main">
+            <div id="initial">
+        <table>
+            <tr>
+                <td><input type="text" maxlength="1" id="num00" /></td>
+                <td><input type="text" maxlength="1" id="num01" /></td>
+                <td style="border-right:3px solid black"><input type="text" maxlength="1" id="num02"/></td>
+                <td style="border-left:3px solid black"><input type="text" maxlength="1" id="num03" /></td>
+                <td><input type="text" maxlength="1" id="num04" /></td>
+                <td style="border-right:3px solid black"><input type="text" maxlength="1" id="num05" /></td>
+                <td style="border-left:3px solid black"><input type="text" maxlength="1" id="num06" /></td>
+                <td><input type="text" maxlength="1" id="num07" /></td>
+                <td><input type="text" maxlength="1" id="num08" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="text" maxlength="1" id="num10" /></td>
+                <td><input type="text" maxlength="1" id="num11" /></td>
+                <td style="border-right:3px solid black"><input type="text" maxlength="1" id="num12" /></td>
+                <td style="border-left:3px solid black"><input type="text" maxlength="1" id="num13" /></td>
+                <td><input type="text" maxlength="1" id="num14" /></td>
+                <td style="border-right:3px solid black"><input type="text" maxlength="1" id="num15" /></td>
+                <td style="border-left:3px solid black"><input type="text" maxlength="1" id="num16" /></td>
+                <td><input type="text" maxlength="1" id="num17" /></td>
+                <td><input type="text" maxlength="1" id="num18" /></td>
+            </tr>
+
+            <tr>
+                <td  style="border-bottom:3px solid black"><input type="text" maxlength="1" id="num20" /></td>
+                <td style="border-bottom:3px solid black"><input type="text" maxlength="1" id="num21" /></td>
+                <td style="border-bottom:3px solid black; border-right:3px solid black"><input type="text" maxlength="1" id="num22" /></td>
+                <td style="border-bottom:3px solid black; border-left:3px solid black"><input type="text" maxlength="1" id="num23" /></td>
+                <td style="border-bottom:3px solid black"><input type="text" maxlength="1" id="num24" /></td>
+                <td style="border-bottom:3px solid black; border-right:3px solid black"><input type="text" maxlength="1" id="num25" /></td>
+                <td style="border-bottom:3px solid black; border-left:3px solid black"><input type="text" maxlength="1" id="num26" /></td>
+                <td style="border-bottom:3px solid black"><input type="text" maxlength="1" id="num27" /></td>
+                <td style="border-bottom:3px solid black"><input type="text" maxlength="1" id="num28" /></td>
+            </tr>
+
+            <tr>
+                <td style="border-top:3px solid black"><input type="text" maxlength="1" id="num30" /></td>
+                <td style="border-top:3px solid black"><input type="text" maxlength="1" id="num31" /></td>
+                <td style="border-right:3px solid black; border-top:3px solid black"><input type="text" maxlength="1" id="num32" /></td>
+                <td style="border-left:3px solid black; border-top:3px solid black"><input type="text" maxlength="1" id="num33" /></td>
+                <td style="border-top:3px solid black"><input type="text" maxlength="1" id="num34" /></td>
+                <td style="border-right:3px solid black; border-top:3px solid black"><input type="text" maxlength="1" id="num35" /></td>
+                <td style="border-left:3px solid black; border-top:3px solid black"><input type="text" maxlength="1" id="num36" /></td>
+                <td style="border-top:3px solid black"><input type="text" maxlength="1" id="num37" /></td>
+                <td style="border-top:3px solid black"><input type="text" maxlength="1" id="num38" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="text" maxlength="1" id="num40" /></td>
+                <td><input type="text" maxlength="1" id="num41" /></td>
+                <td style="border-right:3px solid"><input type="text" maxlength="1" id="num42" /></td>
+                <td style="border-left:3px solid"><input type="text" maxlength="1" id="num43" /></td>
+                <td><input type="text" maxlength="1" id="num44" /></td>
+                <td style="border-right:3px solid"><input type="text" maxlength="1" id="num45" /></td>
+                <td style="border-left:3px solid"><input type="text" maxlength="1" id="num46" /></td>
+                <td><input type="text" maxlength="1" id="num47" /></td>
+                <td><input type="text" maxlength="1" id="num48" /></td>
+            </tr>
+
+            <tr>
+                <td style="border-bottom:3px solid black"><input type="text" maxlength="1" id="num50" /></td>
+                <td style="border-bottom:3px solid black"><input type="text" maxlength="1" id="num51" /></td>
+                <td style="border-right:3px solid; border-bottom:3px solid black"><input type="text" maxlength="1" id="num52" /></td>
+                <td style="border-left:3px solid; border-bottom:3px solid black"><input type="text" maxlength="1" id="num53" /></td>
+                <td style="border-bottom:3px solid black"><input type="text" maxlength="1" id="num54" /></td>
+                <td style="border-right:3px solid; border-bottom:3px solid black"><input type="text" maxlength="1" id="num55" /></td>
+                <td style="border-left:3px solid; border-bottom:3px solid black"><input type="text" maxlength="1" id="num56" /></td>
+                <td style="border-bottom:3px solid black"><input type="text" maxlength="1" id="num57" /></td>
+                <td style="border-bottom:3px solid black"><input type="text" maxlength="1" id="num58" /></td>
+            </tr>
+
+
+            <tr>
+                <td style="border-top:3px solid black"><input type="text" maxlength="1" id="num60" /></td>
+                <td style="border-top:3px solid black"><input type="text" maxlength="1" id="num61" /></td>
+                <td style="border-top:3px solid black; border-right:3px solid"><input type="text" maxlength="1" id="num62" /></td>
+                <td style="border-top:3px solid black; border-left:3px solid"><input type="text" maxlength="1" id="num63" /></td>
+                <td style="border-top:3px solid black"><input type="text" maxlength="1" id="num64" /></td>
+                <td style="border-top:3px solid black; border-right:3px solid"><input type="text" maxlength="1" id="num65" /></td>
+                <td style="border-top:3px solid black; border-left:3px solid"><input type="text" maxlength="1" id="num66" /></td>
+                <td style="border-top:3px solid black"><input type="text" maxlength="1" id="num67" /></td>
+                <td style="border-top:3px solid black"><input type="text" maxlength="1" id="num68" /></td>
+            </tr>
+
+
+            <tr>
+                <td><input type="text" maxlength="1" id="num70" /></td>
+                <td><input type="text" maxlength="1" id="num71" /></td>
+                <td style="border-right:3px solid"><input type="text" maxlength="1" id="num72" /></td>
+                <td style="border-left:3px solid"><input type="text" maxlength="1" id="num73" /></td>
+                <td><input type="text" maxlength="1" id="num74" /></td>
+                <td style="border-right:3px solid"><input type="text" maxlength="1" id="num75" /></td>
+                <td style="border-left:3px solid"><input type="text" maxlength="1" id="num76" /></td>
+                <td><input type="text" maxlength="1" id="num77" /></td>
+                <td><input type="text" maxlength="1" id="num78" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="text" maxlength="1" id="num80" /></td>
+                <td><input type="text" maxlength="1" id="num81" /></td>
+                <td style="border-right:3px solid"><input type="text" maxlength="1" id="num82" /></td>
+                <td style="border-left:3px solid"><input type="text" maxlength="1" id="num83" /></td>
+                <td><input type="text" maxlength="1" id="num84" /></td>
+                <td style="border-right:3px solid"><input type="text" maxlength="1" id="num85" /></td>
+                <td style="border-left:3px solid"><input type="text" maxlength="1" id="num86" /></td>
+                <td><input type="text" maxlength="1" id="num87" /></td>
+                <td><input type="text" maxlength="1" id="num88" /></td>
+            </tr>
+        </table>
+        <br>
+        <center><button id="clicktosolve" onclick="solveit()">Solve Sudoku</button></center>
+    </div>
+    <div id="final">
+        <table>
+            <tr>
+                <td id="res00"></td>
+                <td id="res01"></td>
+                <td style="border-right:3px solid black" id="res02"></td>
+                <td style="border-left:3px solid black" id="res03"></td>
+                <td id="res04"></td>
+                <td  style="border-right:3px solid black" id="res05"></td>
+                <td  style="border-left:3px solid black"id="res06"></td>
+                <td id="res07"></td>
+                <td id="res08"></td>
+            </tr>
+
+            <tr>
+                <td id="res10"></td>
+                <td id="res11"></td>
+                <td  style="border-right:3px solid black" id="res12"></td>
+                <td  style="border-left:3px solid black" id="res13"></td>
+                <td id="res14"></td>
+                <td  style="border-right:3px solid black" id="res15"></td>
+                <td  style="border-left:3px solid black" id="res16"></td>
+                <td id="res17"></td>
+                <td id="res18"></td>
+            </tr>
+
+            <tr>
+                <td style="border-bottom:3px solid black" id="res20"></td>
+                <td style="border-bottom:3px solid black" id="res21"></td>
+                <td  style="border-right:3px solid black; border-bottom:3px solid black" id="res22"></td>
+                <td style="border-left:3px solid black; border-bottom:3px solid black" id="res23"></td>
+                <td  style="border-bottom:3px solid black" id="res24"></td>
+                <td style="border-right:3px solid black; border-bottom:3px solid black" id="res25"></td>
+                <td style="border-left:3px solid black; border-bottom:3px solid black" id="res26"></td>
+                <td style="border-bottom:3px solid black" id="res27"></td>
+                <td style="border-bottom:3px solid black" id="res28"></td>
+            </tr>
+
+            <tr>
+                <td style="border-top:3px solid black" id="res30"></td>
+                <td style="border-top:3px solid black" id="res31"></td>
+                <td style="border-top:3px solid black; border-right:3px solid black" id="res32"></td>
+                <td style="border-top:3px solid black; border-left:3px solid black" id="res33"></td>
+                <td style="border-top:3px solid black" id="res34"></td>
+                <td style="border-top:3px solid black; border-right:3px solid black" id="res35"></td>
+                <td style="border-top:3px solid black; border-left:3px solid black" id="res36"></td>
+                <td style="border-top:3px solid black" id="res37"></td>
+                <td style="border-top:3px solid black" id="res38"></td>
+            </tr>
+
+            <tr>
+                <td id="res40"></td>
+                <td id="res41"></td>
+                <td  style="border-right:3px solid black" id="res42"></td>
+                <td  style="border-left:3px solid black" id="res43"></td>
+                <td id="res44"></td>
+                <td  style="border-right:3px solid black" id="res45"></td>
+                <td  style="border-left:3px solid black" id="res46"></td>
+                <td id="res47"></td>
+                <td id="res48"></td>
+            </tr>
+
+            <tr>
+                <td style="border-bottom:3px solid black" id="res50"></td>
+                <td  style="border-bottom:3px solid black" id="res51"></td>
+                <td style="border-right:3px solid black; border-bottom:3px solid black" id="res52"></td>
+                <td style="border-left:3px solid black; border-bottom:3px solid black" id="res53"></td>
+                <td style="border-bottom:3px solid black" id="res54"></td>
+                <td style="border-right:3px solid black; border-bottom:3px solid black" id="res55"></td>
+                <td style="border-left:3px solid black; border-bottom:3px solid black" id="res56"></td>
+                <td style="border-bottom:3px solid black" id="res57"></td>
+                <td style="border-bottom:3px solid black" id="res58"></td>
+            </tr>
+
+
+            <tr>
+                <td style="border-top:3px solid black;" id="res60"></td>
+                <td style="border-top:3px solid black;"  id="res61"></td>
+                <td style="border-top:3px solid black; border-right:3px solid black"  id="res62"></td>
+                <td style="border-top:3px solid black; border-left:3px solid black"  id="res63"></td>
+                <td style="border-top:3px solid black;"  id="res64"></td>
+                <td style="border-top:3px solid black; border-right:3px solid black"  id="res65"></td>
+                <td style="border-top:3px solid black; border-left:3px solid black"  id="res66"></td>
+                <td style="border-top:3px solid black;"  id="res67"></td>
+                <td style="border-top:3px solid black;"  id="res68"></td>
+            </t6>
+
+
+            <tr>
+                <td id="res70"></td>
+                <td id="res71"></td>
+                <td  style="border-right:3px solid black" id="res72"></td>
+                <td  style="border-left:3px solid black" id="res73"></td>
+                <td id="res74"></td>
+                <td  style="border-right:3px solid black" id="res75"></td>
+                <td  style="border-left:3px solid black" id="res76"></td>
+                <td id="res77"></td>
+                <td id="res78"></td>
+            </tr>
+
+            <tr>
+                <td id="res80"></td>
+                <td id="res81"></td>
+                <td  style="border-right:3px solid black" id="res82"></td>
+                <td  style="border-left:3px solid black" id="res83"></td>
+                <td id="res84"></td>
+                <td  style="border-right:3px solid black" id="res85"></td>
+                <td  style="border-left:3px solid black" id="res86"></td>
+                <td id="res87"></td>
+                <td id="res88"></td>
+            </tr>
+        </table><br><br>
+        <center><span id="customtext">Your Solution will be here</span></center>
+    </div>
+    </div>
+    
+    <div id="foots">
+        <span style="color:whitesmoke; font-size: 30px; font-weight: bold;">How to Use?</span><br>
+        <span style="color:whitesmoke; font-size: 20px;">
+            &nbsp;&nbsp;1. Enter the Numbers on the left hand side 9x9 Grid<br>
+            &nbsp;&nbsp;2. Make sure you enter a Valid Sudoku<br>
+            &nbsp;&nbsp;3. After entering the numbers, click on "Solve Sudoku"<br>
+            &nbsp;&nbsp;4. The result will be on the right hand side Grid<br>
+        </span>
+        <br>
+        <span style="color:white; text-decoration: none; float: right;"><a href="https://github.com/vashistha-10">Click Here for Developer</a> | Copyright June 2020</span><br>
+    </div>
+
+    <script type="text/javascript" src="sudokuscript.js"></script>
+
+    </body>
+</html>
